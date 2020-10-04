@@ -6,6 +6,7 @@ import { elements } from "./modules/views/baseView.js"
 const uri = "modules/data/galerie_images.xml"
 let clickCount = 0
 export const state = {}
+state.speed = 2000
 
 /** 
  * IMAGE CONTROLLER
@@ -46,14 +47,23 @@ function playDiaporama() {
         } else {
             imageView.renderImages(state.images, state.currentIndex++)
         }
-        
+
         if (state.currentIndex > state.images.length - 1) {
             console.log(state.currentIndex)
             state.currentIndex = 0
         }
     }
 
-    const interval = setInterval(diaporama, 1000)
+    const interval = setInterval(diaporama, state.speed)
+}
+
+
+function setSpeed(e) {
+    if (e.target.value === 'fast') {
+        state.speed = 500
+    } else {
+        state.speed = 2000
+    }
 }
 
 window.addEventListener('load', () => controlImages())
@@ -62,4 +72,5 @@ elements.buttonPrev.addEventListener('click', getPrevImage)
 elements.buttonNext.addEventListener('click', getNextImage)
 elements.buttonLast.addEventListener('click', () => imageView.renderImages(state.images, state.images.length - 1))
 elements.buttonPlay.addEventListener('click', playDiaporama)
+elements.selectSpeed.addEventListener('change', setSpeed)
 

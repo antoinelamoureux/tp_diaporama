@@ -4,5 +4,6 @@ export const elements = {
     buttonNext: document.getElementById('button-next'),
     buttonFirst: document.getElementById('button-first'),
     buttonLast: document.getElementById('button-last'),
-    buttonPlay: document.getElementById('button-play')
+    buttonPlay: document.getElementById('button-play'),
+    selectSpeed: document.getElementById('select-speed')
 }
