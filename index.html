@@ -2,10 +2,18 @@
 <html>
 <head>
 <title>Galeries Images (vignettes cliquables) JS-AJAX-XML</title>
-<script src="main.js" defer></script>
+<script type="module" src="main.js" defer></script>
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="modal"></div>
+    <div id="container">
+        <div id="control-panel">
+            <span id="button-first"><<</span>
+            <span id="button-prev">Précedente</span>
+            <span id="button-next">Suivante</span>
+            <span id="button-last">>></span>
+            <span id="button-play">Play / Stop</span>
+        </div>
+    </div>
 </body>
 </html>
